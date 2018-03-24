@@ -14,6 +14,7 @@ void ConfigurationData::resetToDefault() {
 	maxFPS = 60;
 	mainKeyMap = DEFAULT_KEYMAP;
 	alternativeKeyMap = ALTERNATIVE_KEYMAP;
+	joystickKeyMap = JOYSTICK_KEYMAP;
 	displayMode = DisplayMode::Fullscreen;
 	isQuickcast = true;
 	isAutotarget = true;
@@ -58,7 +59,8 @@ const std::map<Key, sf::Keyboard::Key> ConfigurationData::DEFAULT_KEYMAP =
 	{ Key::Screenshot, sf::Keyboard::F10 },
 	{ Key::Debug, sf::Keyboard::F11 },
 	{ Key::BackToCheckpoint, sf::Keyboard::B },
-	{ Key::ToggleAutotarget, sf::Keyboard::P }
+	{ Key::ToggleAutotarget, sf::Keyboard::P },
+	{ Key::Attack, sf::Keyboard::KeyCount }
 };
 
 const std::map<Key, sf::Keyboard::Key> ConfigurationData::ALTERNATIVE_KEYMAP =
@@ -80,17 +82,52 @@ const std::map<Key, sf::Keyboard::Key> ConfigurationData::ALTERNATIVE_KEYMAP =
 	{ Key::Down, sf::Keyboard::Down },
 	{ Key::Jump, sf::Keyboard::KeyCount },
 	{ Key::Chop, sf::Keyboard::KeyCount },
-	{ Key::FirstSpell, sf::Keyboard::Numpad1 },
-	{ Key::SecondSpell, sf::Keyboard::Numpad2 },
-	{ Key::ThirdSpell, sf::Keyboard::Numpad3 },
-	{ Key::FourthSpell, sf::Keyboard::Numpad4 },
-	{ Key::FifthSpell, sf::Keyboard::Numpad5 },
-	{ Key::QuickSlot1, sf::Keyboard::Numpad6 },
-	{ Key::QuickSlot2, sf::Keyboard::Numpad7 },
+	{ Key::FirstSpell, sf::Keyboard::KeyCount },
+	{ Key::SecondSpell, sf::Keyboard::KeyCount },
+	{ Key::ThirdSpell, sf::Keyboard::KeyCount },
+	{ Key::FourthSpell, sf::Keyboard::KeyCount },
+	{ Key::FifthSpell, sf::Keyboard::KeyCount },
+	{ Key::QuickSlot1, sf::Keyboard::KeyCount },
+	{ Key::QuickSlot2, sf::Keyboard::KeyCount },
 	{ Key::ToggleTooltips, sf::Keyboard::KeyCount },
 	{ Key::SwitchTarget, sf::Keyboard::KeyCount },
 	{ Key::Screenshot, sf::Keyboard::KeyCount },
 	{ Key::Debug, sf::Keyboard::KeyCount },
 	{ Key::BackToCheckpoint, sf::Keyboard::KeyCount },
-	{ Key::ToggleAutotarget, sf::Keyboard::KeyCount }
+	{ Key::ToggleAutotarget, sf::Keyboard::KeyCount },
+	{ Key::Attack, sf::Keyboard::KeyCount }
+};
+
+const std::map<Key, int> ConfigurationData::JOYSTICK_KEYMAP =
+{
+	{ Key::Escape, 3 }, // 3 is Y / Up
+	{ Key::Quickload, -1 },
+	{ Key::Quicksave, -1 },
+	{ Key::Inventory, -1 },
+	{ Key::CharacterInfo, -1 },
+	{ Key::Map, -1 },
+	{ Key::Journal, -1 },
+	{ Key::Spellbook, -1 },
+	{ Key::Interact, 2 }, // 2 is X / Right
+	{ Key::Confirm, 2 }, // 2 is X / Right
+	{ Key::Left, -1 },
+	{ Key::Right, -1 },
+	{ Key::Up, -1 },
+	{ Key::Down, -1 },
+	{ Key::Jump, 0 }, // 0 is A / Jump
+	{ Key::Chop, -1 },
+	{ Key::FirstSpell, -1 },
+	{ Key::SecondSpell, -1 },
+	{ Key::ThirdSpell, -1 },
+	{ Key::FourthSpell, -1 },
+	{ Key::FifthSpell, -1 },
+	{ Key::QuickSlot1, -1 },
+	{ Key::QuickSlot2, -1 },
+	{ Key::ToggleTooltips, -1 },
+	{ Key::SwitchTarget, -1 },
+	{ Key::Screenshot, -1 },
+	{ Key::Debug, -1 },
+	{ Key::BackToCheckpoint, -1 },
+	{ Key::ToggleAutotarget, -1 },
+	{ Key::Attack, 1 } // 1 is B / Attack
 };
